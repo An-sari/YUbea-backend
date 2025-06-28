@@ -10,6 +10,13 @@ from src.models.user import db
 from src.routes.user import user_bp
 from src.routes.contact import contact_bp
 
+
+
+@app.route('/health')
+def health_check():
+    return "Flask backend running!"
+
+
 app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'static'))
 app.config['SECRET_KEY'] = 'asdf#FGSgvasgf$5$WGT'
 
